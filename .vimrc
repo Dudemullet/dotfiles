@@ -16,23 +16,32 @@ Plugin 'https://github.com/Lokaltog/vim-easymotion'
 Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/tomtom/tcomment_vim'
 Plugin 'https://github.com/wincent/Command-T.git'
+Plugin 'jelera/vim-javascript-syntax'
 
 call vundle#end()            " required
 filetype plugin indent on
+
+" Plugin config
+set autochdir
+let NERDTreeChDirMode=2
+nnoremap <leader>n :NERDTree .<CR>
+map <leader>c  <c-_><c-_> " Comment selection with \c
 
 " Editor Config
 syntax enable
 set background=dark
 colorscheme solarized
-set autochdir
-let NERDTreeChDirMode=2
-nnoremap <leader>n :NERDTree .<CR>
-map <leader>c  <c-_><c-_>
-set guifont=Menlo\ Regular\ for\ Powerline:h14 
 set number
+
+" Font for Mac (Menlo) with windows fallback (Consolas)
+set guifont=Menlo\ Regular\ for\ Powerline:h14,Consolas:h14:b:cANSI
 
 " Indentation
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
+
+" Normalize Backspace key
+set backspace=2
+set backspace=indent,eol,start
