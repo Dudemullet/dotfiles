@@ -17,6 +17,7 @@ Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/tomtom/tcomment_vim'
 Plugin 'https://github.com/wincent/Command-T.git'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 
 call vundle#end()            " required
 filetype plugin indent on
