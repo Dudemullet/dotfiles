@@ -15,7 +15,6 @@ Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/Lokaltog/vim-easymotion'
 Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/tomtom/tcomment_vim'
-Plugin 'https://github.com/wincent/Command-T.git'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 
