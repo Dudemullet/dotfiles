@@ -24,7 +24,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
-  web = "!f(){ url=$(git config --get remote.$1.url); open $url >nul 2>&1 && return 0 || (start $url) ;}; f"
+  web = "!f(){ url=$(git config --get remote.$1.url); git web--browse $url;}; f"
   open-modified =  "!f(){ git diff --name-only | xargs subl; };f"
   delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
   fetch-all-and-prune = fetch --all --prune
