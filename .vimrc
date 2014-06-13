@@ -18,6 +18,7 @@ Plugin 'https://github.com/tomtom/tcomment_vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'tpope/vim-fugitive'
+Plugin 'gioele/vim-autoswap'
 
 call vundle#end()            " required
 filetype plugin indent on
