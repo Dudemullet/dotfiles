@@ -2,14 +2,11 @@
     helper = osxkeychain
 [credential "https://stash.pros.com"]
     username = lgutierr
-[credential "https://github.com/PROSPricing/"]
+[credential "https://github.com/PROSPricing/step.git/"]
     username = Lgutierrez
     useHttpPath = true
 [credential "https://github.com/Lgutierrez"]
     username = Lgutierrez
-    useHttpPath = true
-[credential "https://github.com/"]
-    username = Dudemullet
     useHttpPath = true
 [user]
 	name = Lgutierrez
