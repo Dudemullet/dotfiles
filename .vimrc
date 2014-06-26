@@ -18,13 +18,15 @@ Plugin 'https://github.com/tomtom/tcomment_vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'tpope/vim-fugitive'
+Plugin 'groenewege/vim-less'
 Plugin 'gioele/vim-autoswap'
+Plugin 'yegappan/mru'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 filetype plugin indent on
 
 " Plugin config
-set autochdir
 let NERDTreeChDirMode=2
 nnoremap <leader>n :NERDTree .<CR>
 map <leader>c  <c-_><c-_> " Comment selection with \c
@@ -47,3 +49,14 @@ set expandtab
 " Normalize Backspace key
 set backspace=2
 set backspace=indent,eol,start
+
+" folding
+set foldmethod=indent
+
+" undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+
+" auto remote trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
