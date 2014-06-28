@@ -2,8 +2,14 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " Plugin setup
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('win32') || has('win64')
+  set rtp+=~/vimfiles/bundle/Vundle.vim
+  call vundle#begin()
+else
+  " Usual quickstart instructions
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+endif
 
 Plugin 'gmarik/Vundle.vim'
 
