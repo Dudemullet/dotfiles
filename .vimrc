@@ -17,6 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'git://git.wincent.com/command-t.git'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/Lokaltog/vim-easymotion'
 Plugin 'https://github.com/tpope/vim-surround'
@@ -28,6 +29,9 @@ Plugin 'groenewege/vim-less'
 Plugin 'gioele/vim-autoswap'
 Plugin 'yegappan/mru'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'elzr/vim-json'
+Plugin 'digitaltoad/vim-jade'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -38,10 +42,21 @@ nnoremap <leader>n :NERDTree .<CR>
 map <leader>c  <c-_><c-_> " Comment selection with \c
 
 " Editor Config
+set t_Co=256
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme getafe
 set number
+set autochdir
+set wildmenu
+set wildmode=list:full
+set wildcharm=<C-z>
+nnoremap <leader>] :colorscheme <C-z><S-Tab>
+
+" Search settings
+set ignorecase
+set smartcase " Don't ignore case if a capital letter is added
+set hlsearch " highlight all search matches
 
 " Font for Mac (Menlo) with windows fallback (Consolas)
 set guifont=Menlo\ Regular\ for\ Powerline:h14,Consolas:h14:b:cANSI
@@ -60,9 +75,18 @@ set backspace=indent,eol,start
 set foldmethod=indent
 
 " undo
-set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
+set undofile                " Save undo's after file closes
+set undolevels=1000
+set undoreload=10000
 
 " auto remote trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Enable airline even when only 1 buffer open
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "solarized"
+
+" git gutter settings
+highlight clear SignColumn
