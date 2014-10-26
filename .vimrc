@@ -32,6 +32,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'elzr/vim-json'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -52,6 +53,7 @@ set wildmenu
 set wildmode=list:full
 set wildcharm=<C-z>
 nnoremap <leader>] :colorscheme <C-z><S-Tab>
+set clipboard=unnamed
 
 " Search settings
 set ignorecase
