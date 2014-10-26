@@ -1,22 +1,17 @@
 [credential]
     helper = osxkeychain
-[credential "https://stash.pros.com"]
-    username = lgutierr
-[credential "https://github.com/PROSPricing/step.git/"]
-    username = Lgutierrez
-    useHttpPath = true
-[credential "https://github.com/Lgutierrez"]
-    username = Lgutierrez
+[credential "https://github.com/"]
+    username = Dudemullet
     useHttpPath = true
 [user]
-	name = Lgutierrez
-	email = lgutierrez@prospricing.com
+	name = Dudemullet
+	email = elpaip@gmail.com
 [core]
-	excludesfile = /Users/lgutierrez/.gitignore_global
-	editor = emacs
+	excludesfile = ~/.gitignore_global
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
