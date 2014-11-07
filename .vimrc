@@ -33,14 +33,13 @@ Plugin 'bling/vim-airline'
 Plugin 'elzr/vim-json'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on
 
 " Plugin config
 let NERDTreeChDirMode=2
-nnoremap <leader>n :NERDTree .<CR>
-map <leader>c  <c-_><c-_> " Comment selection with \c
 
 " Editor Config
 set t_Co=256
@@ -52,7 +51,17 @@ set autochdir
 set wildmenu
 set wildmode=list:full
 set wildcharm=<C-z>
-nnoremap <leader>] :colorscheme <C-z><S-Tab>
+set visualbell
+
+" Mappings
+" nnoremap <leader>] :colorscheme <C-z><S-Tab>
+nnoremap <leader>n :NERDTree .<CR>
+map <leader>c  <c-_><c-_> " Comment selection with \c
+nnoremap <leader>[ :GitGutterPrevHunk <CR>
+nnoremap <leader>] :GitGutterNextHunk <CR>
+
+
+" System  Clipboard
 set clipboard=unnamed
 
 " Search settings
