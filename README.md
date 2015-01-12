@@ -10,6 +10,8 @@ Though I have a Windows desktop (Win 7), most of my development and day to day w
 
 ## git
 
+Most of the things I mess around with git will be in the form of the git aliases. They are a pretty handy way of extending git, you can read more about them [here](http://git-scm.com/book/en/v2/Git-Basics-Git-Aliases).
+
 ### ppop
 
 Calls a git command on a branch, without switching you from your current branch. In reality, what it does is that it will switch to the branch you specify, run the git command then checkout the last branch you where on.
@@ -30,7 +32,7 @@ A better use case is, lets say you are on `dev`, want to rebase onto `master`, b
 
 #### old way
 ```
-// assuming we are in dev
+// assuming we are in dev branch
 git checkout master
 git pull
 git checkout dev
@@ -39,10 +41,19 @@ git rebase master
 
 #### with ppop
 ```
-// assumin we are in dev
+// assumin we are in dev branch
 git ppop master pull
 git rebase master
 ```
 
 ## tig
 
+These are some useful key bindings I've configured for [tig](https://github.com/jonas/tig).
+
+> Text-mode interface for git
+
+### c (key binding)
+checkout the currently highlighted commit
+
+### R (key binding)
+`git reset hard` to the currently highlighted commit
