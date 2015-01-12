@@ -1,8 +1,6 @@
 # Dotfiles
 
-These are my dotfiles, there are many like them, but these are mine. [^1] 
-
-[^1]: [rifelmans creed](http://en.wikipedia.org/wiki/Rifleman%27s_Creed)
+These are my dotfiles, there are many like them, but these are mine. [rifelmans creed](http://en.wikipedia.org/wiki/Rifleman%27s_Creed)
 
 I will document the aliases/commands that I have created so that there is a reference on how to use them and/or how they work. Stuff I copied and or borrowed from someone else should be documented elsewhere.
 
@@ -52,8 +50,8 @@ These are some useful key bindings I've configured for [tig](https://github.com/
 
 > Text-mode interface for git
 
-### c (key binding)
+### c (case sensitive)
 checkout the currently highlighted commit
 
-### R (key binding)
+### R (case sensitive)
 `git reset hard` to the currently highlighted commit
