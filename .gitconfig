@@ -24,6 +24,7 @@
   po = push origin --prune
   branch-point = merge-base branch master
   change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f "
+  ppop = "!f() { git checkout $1; shift; git $@; git checkout -;}; f "
 [push]
 	default = matching
 [diff]
