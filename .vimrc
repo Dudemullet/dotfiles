@@ -34,6 +34,7 @@ Plugin 'elzr/vim-json'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -59,7 +60,14 @@ nnoremap <leader>n :NERDTree .<CR>
 map <leader>c  <c-_><c-_> " Comment selection with \c
 nnoremap <leader>[ :GitGutterPrevHunk <CR>
 nnoremap <leader>] :GitGutterNextHunk <CR>
+nnoremap <leader>p :CtrlP <CR>
 
+" CtrlP config
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\vnode_modules$'
+
+" Sort CSS command
+command! SortCss :g#\({\n\)\@<=#.,/}/sort
 
 " System  Clipboard
 set clipboard=unnamed
