@@ -61,6 +61,7 @@ map <leader>c  <c-_><c-_> " Comment selection with \c
 nnoremap <leader>[ :GitGutterPrevHunk <CR>
 nnoremap <leader>] :GitGutterNextHunk <CR>
 nnoremap <leader>p :CtrlP <CR>
+nnoremap <leader>; :MRU <CR>
 
 " CtrlP config
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
