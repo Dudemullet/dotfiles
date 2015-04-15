@@ -23,6 +23,8 @@ Plugin 'https://github.com/Lokaltog/vim-easymotion'
 Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/tomtom/tcomment_vim'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'groenewege/vim-less'
@@ -35,6 +37,16 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'briancollins/vim-jst'
+Plugin 'mxw/vim-jsx'
+Plugin 'justinj/vim-react-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'joonty/vdebug'
+Plugin 'StanAngeloff/php.vim'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -54,6 +66,14 @@ set wildmode=list:full
 set wildcharm=<C-z>
 set visualbell
 
+" JSX config
+let g:jsx_ext_required = 0
+
+" indent guides
+set ts=2 sw=2 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
 " Mappings
 " nnoremap <leader>] :colorscheme <C-z><S-Tab>
 nnoremap <leader>n :NERDTree .<CR>
@@ -62,6 +82,9 @@ nnoremap <leader>[ :GitGutterPrevHunk <CR>
 nnoremap <leader>] :GitGutterNextHunk <CR>
 nnoremap <leader>p :CtrlP <CR>
 nnoremap <leader>; :MRU <CR>
+
+" New line on control-C
+imap <C-c> <CR><Esc>O
 
 " CtrlP config
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -93,6 +116,7 @@ set backspace=indent,eol,start
 
 " folding
 set foldmethod=indent
+set foldlevel=1
 
 " undo
 set undodir=$HOME/.vim/undo " where to save undo histories
@@ -110,3 +134,4 @@ let g:airline_theme = "solarized"
 
 " git gutter settings
 highlight clear SignColumn
+au BufNewFile,BufRead *.php set filetype=php
