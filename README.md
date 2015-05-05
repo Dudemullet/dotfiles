@@ -34,7 +34,7 @@ A better use case is, lets say you are on `dev`, want to rebase onto `master`, b
 git checkout master
 git pull
 git checkout dev
-git rebase master 
+git rebase master
 ```
 
 #### with ppop
@@ -55,3 +55,12 @@ checkout the currently highlighted commit
 
 ### R (case sensitive)
 `git reset hard` to the currently highlighted commit
+
+## oh-my-zsh
+I've created a custom plugin (a set of functions) to automatically load in you zsh sessions the included functions are
+
+### Installation
+You install and run this plugin by placing it in `~/.oh-my-zsh/custom/plugins`. Then in your `~/.zshrc` you enable this plugin `plugin=(dudemullet)`
+
+- `mcd`: make a dire and cd into it.
+- `grepr`: Recursive grep in the current directory
