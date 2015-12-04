@@ -19,7 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-Plugin 'https://github.com/Lokaltog/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/tomtom/tcomment_vim'
 Plugin 'jelera/vim-javascript-syntax'
@@ -35,7 +35,7 @@ Plugin 'bling/vim-airline'
 Plugin 'elzr/vim-json'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'briancollins/vim-jst'
@@ -47,6 +47,11 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'joonty/vdebug'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'zefei/vim-colortuner'
+Plugin 'tpope/vim-repeat'
+Plugin 'fatih/vim-go'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -58,13 +63,16 @@ let NERDTreeChDirMode=2
 set t_Co=256
 syntax enable
 set background=dark
-colorscheme getafe
+colorscheme iceberg
 set number
-set autochdir
+autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 set wildmenu
 set wildmode=list:full
 set wildcharm=<C-z>
 set visualbell
+set mouse=a
+set pastetoggle=<F2>
+nnoremap <leader>v <F2> cmd-v <F2>
 
 " JSX config
 let g:jsx_ext_required = 0
@@ -89,6 +97,7 @@ imap <C-c> <CR><Esc>O
 " CtrlP config
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\vnode_modules$'
+let g:ctrlp_working_path_mode = 'rw'
 
 " Sort CSS command
 command! SortCss :g#\({\n\)\@<=#.,/}/sort
@@ -102,7 +111,9 @@ set smartcase " Don't ignore case if a capital letter is added
 set hlsearch " highlight all search matches
 
 " Font for Mac (Menlo) with windows fallback (Consolas)
-set guifont=Menlo\ Regular\ for\ Powerline:h14,Consolas:h14:b:cANSI
+" set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline:h14,Consolas:h14:b:cANSI
+" set guifont=Source\ Code\ Pro\ Regular\ for\ Powerline:h14,Consolas:h14:b:cANSI
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14,Consolas:h14:b:cANSI
 
 " Indentation
 set smartindent
