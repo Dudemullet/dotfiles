@@ -6,3 +6,7 @@ function grepr() {
 function mcd() {
   mkdir -p "$1" && cd "$1";
 }
+
+function lld() {
+  ll -d */
+}
