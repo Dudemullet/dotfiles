@@ -1,5 +1,12 @@
 [credential]
     helper = osxkeychain
+[credential "ssh://dev.konfio.mx/"]
+    username = luis.gutierrez
+[credential "https://konfio.mx/"]
+    username = luis.gutierrez
+    useHttpPath = true
+    name = Luis Gutierrez
+    email = luis.gutierrez@konfion.mx
 [credential "https://github.com/"]
     username = Dudemullet
     useHttpPath = true
@@ -7,14 +14,8 @@
 	name = Dudemullet
 	email = elpaip@gmail.com
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/Dudemullet/.gitignore_global
 	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [alias]
   web = "!f(){ url=$(git config --get remote.$1.url); git web--browse $url;}; f"
   open-modified =  "!f(){ git diff --name-only | xargs subl; };f"
@@ -25,9 +26,22 @@
   branch-point = merge-base branch master
   change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f "
   ppop = "!f() { git checkout $1; shift; git $@; git checkout -;}; f "
+	d = difftool
 [push]
 	default = matching
-[diff]
-[merge]
 [color]
   ui = auto
+[difftool]
+	prompt = false
+[http]
+	postBuffer = 524288000
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
