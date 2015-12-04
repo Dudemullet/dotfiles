@@ -137,6 +137,7 @@ set undoreload=10000
 
 " auto remote trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Enable airline even when only 1 buffer open
 set laststatus=2
@@ -145,4 +146,9 @@ let g:airline_theme = "solarized"
 
 " git gutter settings
 highlight clear SignColumn
+
+" Map file types with syntaxes
 au BufNewFile,BufRead *.php set filetype=php
+"
+" Git gutter max symbols
+let g:gitgutter_max_signs = 2000  " default value
