@@ -10,7 +10,8 @@ ZSH_THEME="agnoster"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-DEFAULT_USER="lgutierrez"
+DEFAULT_USER="Dudemullet"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -29,23 +30,32 @@ DEFAULT_USER="lgutierrez"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rails ruby)
+plugins=(git osx dudemullet z)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export EDITOR=emacs
+export EDITOR=vim
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/bin:$GRAILS_HOME:$GRAILS_HOME/bin
-export PATH=$PATH:/usr/local/Cellar/ruby/1.9.3-p194/bin:
 export PATH=$PATH:$CATALINA_HOME
+export PATH=$PATH:~/.bin
 export JAVA_HOME=$(/usr/libexec/java_home)
+export NVM_DIR=~/.nvm
+export ENV=local
+export NODE_ENV=local
+source $(brew --prefix nvm)/nvm.sh
 export PATH=$PATH:$JAVA_HOME
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
-alias sbl="/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2"
-alias lsl="ls -l"
-PATH=/usr/local/share/npm/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-GRAILS_OPTS="-XX:MaxPermSize=2048m -Xmx2048M -server"
-export CDPATH=".:~:/Users/Lgutierrez/Sites:/Users/Lgutierrez/PROS"
+alias lsl="ls -1"
+alias svn_delete_untracked="svn status --no-ignore | grep '^\?' | sed 's/^\?     //'  | xargs rm -rf"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/lgutierrez/.gvm/bin/gvm-init.sh" ]] && source "/Users/lgutierrez/.gvm/bin/gvm-init.sh"
