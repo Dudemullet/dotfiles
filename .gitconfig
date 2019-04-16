@@ -1,12 +1,5 @@
 [credential]
     helper = osxkeychain
-[credential "ssh://dev.konfio.mx/"]
-    username = luis.gutierrez
-[credential "https://konfio.mx/"]
-    username = luis.gutierrez
-    useHttpPath = true
-    name = Luis Gutierrez
-    email = luis.gutierrez@konfion.mx
 [credential "https://github.com/"]
     username = Dudemullet
     useHttpPath = true
@@ -41,7 +34,7 @@
 	required = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

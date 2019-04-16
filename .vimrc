@@ -13,9 +13,6 @@ endif
 
 Plugin 'gmarik/Vundle.vim'
 
-" Example git
-" Plugin 'git://git.wincent.com/command-t.git'
-
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
@@ -31,7 +28,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'gioele/vim-autoswap'
 Plugin 'yegappan/mru'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'elzr/vim-json'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'kchmck/vim-coffee-script'
@@ -45,7 +42,6 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Plugin 'joonty/vdebug'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'zefei/vim-colortuner'
@@ -142,7 +138,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 " Enable airline even when only 1 buffer open
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "solarized"
+let g:airline_theme="simple"
 
 " git gutter settings
 highlight clear SignColumn
