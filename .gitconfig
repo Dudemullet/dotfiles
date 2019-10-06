@@ -1,21 +1,11 @@
 [credential]
     helper = osxkeychain
-[credential "ssh://dev.konfio.mx/"]
-    username = luis.gutierrez
-[credential "https://konfio.mx/"]
-    username = luis.gutierrez
-    useHttpPath = true
-    name = Luis Gutierrez
-    email = luis.gutierrez@konfion.mx
 [credential "https://github.com/"]
     username = Dudemullet
     useHttpPath = true
 [user]
 	name = Dudemullet
 	email = elpaip@gmail.com
-[core]
-	excludesfile = /Users/Dudemullet/.gitignore_global
-	editor = vim
 [alias]
   web = "!f(){ url=$(git config --get remote.$1.url); git web--browse $url;}; f"
   open-modified =  "!f(){ git diff --name-only | xargs subl; };f"
@@ -39,9 +29,3 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
