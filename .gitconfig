@@ -6,9 +6,6 @@
 [user]
 	name = Dudemullet
 	email = elpaip@gmail.com
-[core]
-	excludesfile = /Users/Dudemullet/.gitignore_global
-	editor = vim
 [alias]
   web = "!f(){ url=$(git config --get remote.$1.url); git web--browse $url;}; f"
   open-modified =  "!f(){ git diff --name-only | xargs subl; };f"
