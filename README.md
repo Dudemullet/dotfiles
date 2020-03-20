@@ -64,3 +64,8 @@ You install and run this plugin by placing it in `~/.oh-my-zsh/custom/plugins`. 
 
 - `mcd`: make a dire and cd into it.
 - `grepr`: Recursive grep in the current directory
+
+## Brewfile
+
+to use do `brew bundle` in the current directory or `brew bundle <point_to_file>`
+
