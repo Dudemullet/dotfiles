@@ -1,0 +1,5 @@
+[user]
+	email = felipe.gutierrez@konfio.mx
+	name = Pipe Gutierrez
+[pull]
+	rebase = true

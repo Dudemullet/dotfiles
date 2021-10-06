@@ -1,13 +1,17 @@
 [credential]
-    helper = osxkeychain
+  helper = osxkeychain
 [credential "https://github.com/"]
-    username = Dudemullet
-    useHttpPath = true
+  username = Dudemullet
+  useHttpPath = true
 [user]
-	name = Dudemullet
-	email = elpaip@gmail.com
+  name = Dudemullet
+  email = elpaip@gmail.com
+
+[includeIf "gitdir:~/dev/konfio"]
+  path = ~/.konfio-gitconfig
+
 [alias]
-  web = "!f(){ url=$(git config --get remote.$1.url); git web--browse $url;}; f"
+  webos = "!f(){ url=$(git config --get remote.$1.url); git web--browse $url;}; f"
   open-modified =  "!f(){ git diff --name-only | xargs subl; };f"
   delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
   fetch-all-and-prune = fetch --all --prune
@@ -16,16 +20,16 @@
   branch-point = merge-base branch master
   change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f "
   ppop = "!f() { git checkout $1; shift; git $@; git checkout -;}; f "
-	d = difftool
+  d = difftool
 [push]
-	default = matching
+  default = matching
 [color]
   ui = auto
 [difftool]
-	prompt = false
+  prompt = false
 [http]
-	postBuffer = 524288000
+  postBuffer = 524288000
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
