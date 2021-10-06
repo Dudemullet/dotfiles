@@ -1,6 +1,12 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Buffet colors
+" Note: Make sure the function is defined before `vim-buffet` is loaded.
+function! g:BuffetSetCustomColors()
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00FF00 guifg=#000000
+endfunction
+
 " Plugin setup
 if has('win32') || has('win64')
   set rtp+=~/vimfiles/bundle/Vundle.vim
@@ -14,15 +20,12 @@ endif
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'https://github.com/tpope/vim-surround'
 Plugin 'https://github.com/tomtom/tcomment_vim'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
+Plugin 'mg979/vim-visual-multi'
 Plugin 'tpope/vim-fugitive'
 Plugin 'groenewege/vim-less'
 Plugin 'gioele/vim-autoswap'
@@ -31,23 +34,25 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'elzr/vim-json'
 Plugin 'digitaltoad/vim-jade'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'briancollins/vim-jst'
 Plugin 'mxw/vim-jsx'
-Plugin 'justinj/vim-react-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'zefei/vim-colortuner'
 Plugin 'tpope/vim-repeat'
 Plugin 'fatih/vim-go'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'prettier/vim-prettier'
+Plugin 'hashivim/vim-terraform'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'bagrat/vim-buffet'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -59,7 +64,7 @@ let NERDTreeChDirMode=2
 set t_Co=256
 syntax enable
 set background=dark
-colorscheme iceberg
+colorscheme dracula
 set number
 autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 set wildmenu
@@ -148,3 +153,15 @@ au BufNewFile,BufRead *.php set filetype=php
 "
 " Git gutter max symbols
 let g:gitgutter_max_signs = 2000  " default value
+
+
+" Tab buffet
+noremap <Tab> :bn<CR>
+noremap <S-Tab> :bp<CR>
+noremap <Leader><Tab> :Bw<CR>
+noremap <Leader><S-Tab> :Bw!<CR>
+noremap <C-t> :tabnew split<CR>
+let g:buffet_separator = '#'
+let g:buffet_powerline_separators = 1
+let g:buffet_show_index = 1
+
