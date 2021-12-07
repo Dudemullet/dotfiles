@@ -7,7 +7,7 @@
   name = Dudemullet
   email = elpaip@gmail.com
 
-[includeIf "gitdir:~/dev/konfio"]
+[includeIf "gitdir:~/dev/konfio/"]
   path = ~/.konfio-gitconfig
 
 [alias]
@@ -33,3 +33,7 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
+[core]
+	excludesfile = /Users/pipegutierrez/.gitignore_global
+[pager]
+	branch = false

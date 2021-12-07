@@ -53,6 +53,8 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'bagrat/vim-buffet'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -85,11 +87,10 @@ let g:indent_guides_guide_size = 1
 
 " Mappings
 " nnoremap <leader>] :colorscheme <C-z><S-Tab>
-nnoremap <leader>n :NERDTree .<CR>
+nnoremap <leader>p :NERDTreeToggle .<CR>
 map <leader>c  <c-_><c-_> " Comment selection with \c
 nnoremap <leader>[ :GitGutterPrevHunk <CR>
 nnoremap <leader>] :GitGutterNextHunk <CR>
-nnoremap <leader>p :CtrlP <CR>
 nnoremap <leader>; :MRU <CR>
 
 " New line on control-C
@@ -165,3 +166,6 @@ let g:buffet_separator = '#'
 let g:buffet_powerline_separators = 1
 let g:buffet_show_index = 1
 
+" YouCompleteMe
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)

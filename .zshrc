@@ -12,6 +12,7 @@ antigen bundle pip
 antigen bundle command-not-found
 antigen bundle z
 antigen bundle web-search
+antigen bundle paulirish/git-open
 antigen theme romkatv/powerlevel10k
 
 # Syntax highlighting bundle.
